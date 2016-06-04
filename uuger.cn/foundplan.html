@@ -1,0 +1,159 @@
+<div id="normalpager">
+	<div class="founder">
+		<header class="founder__header"></header>
+		<div class="founder-headerbar">
+			<a class="Go-home" href="#">
+				<i class="backhome icon-home"></i> 
+			</a>
+			<a href="#" class="OtherLink-star" >
+			<p style="float: right;margin-top: 10px;margin-right: 10px;font-size: 12px;font-family: Microsoft YaHei;color: #333333;">我的收藏</p>
+			</a>
+			<p style=" margin-left: 50%;left: -30px;position: relative;font-size: 15px;top: 7px;font-family: Microsoft YaHei;color: #E91E63;font-weight: 600; display: inline-block;">计划推荐</p>
+		</div>
+		<div class="founder__content">
+		    <div class="founder__card-cont">
+				<div class="founder__card">
+					<div class="founder__card__top">
+					<div class="founder__card__img Bear"></div>
+					<p class="founder__card__name" style="color: #542F13;">Plan About Bear </p>
+					</div>
+					<div class="founder__card__btm">
+					  <p class="founder__card__we">关于该计划的项目简介:Brief introduction about the project,you can fill in any information that is relevant to the plan</p>
+					</div>
+					<div class="founder__card__choice m--reject"><i class="icon-remove"></i></div>
+					<div class="founder__card__choice m--like"><i class="icon-star"></i></div>
+					<div class="founder__card__drag"></div>
+				</div>
+				<div class="founder__card">
+					<div class="founder__card__top">
+					  <div class="founder__card__img Fox"></div>
+					  <p class="founder__card__name" style="color: #ED8D1F;">Plan About Fox</p>
+					</div>
+					<div class="founder__card__btm">
+						<p class="founder__card__we">关于该计划的项目简介:Brief introduction about the project,you can fill in any information that is relevant to the plan</p>
+					</div>
+					<div class="founder__card__choice m--reject"><i class="icon-remove"></i></div>
+					<div class="founder__card__choice m--like"><i class="icon-star"></i></div>
+					<div class="founder__card__drag"></div>
+				</div>
+				<div class="founder__card">
+					<div class="founder__card__top">
+					  <div class="founder__card__img Mouse"></div>
+					  <p class="founder__card__name" style="color:#808080;">Plan About Mouse</p>
+					</div>
+				    <div class="founder__card__btm">
+				      <p class="founder__card__we">关于该计划的项目简介:Brief introduction about the project,you can fill in any information that is relevant to the plan</p>
+				    </div>
+				    <div class="founder__card__choice m--reject"><i class="icon-remove"></i></div>
+				    <div class="founder__card__choice m--like"><i class="icon-star"></i></div>
+				    <div class="founder__card__drag"></div>
+				</div>
+				<div class="founder__card">
+				    <div class="founder__card__top">
+				      <div class="founder__card__img Rabbit"></div>
+				      <p class="founder__card__name" style="color: #C4C8CB;">Plan About Rabbit</p>
+				    </div>
+				    <div class="founder__card__btm">
+				      <p class="founder__card__we">关于该计划的项目简介:Brief introduction about the project,you can fill in any information that is relevant to the plan</p>
+				    </div>
+				    <div class="founder__card__choice m--reject"><i class="icon-remove"></i></div>
+				    <div class="founder__card__choice m--like"><i class="icon-star"></i></div>
+				    <div class="founder__card__drag"></div>
+				</div>
+				<div class="founder__card">
+				    <div class="founder__card__top">
+				      <div class="founder__card__img Stag"></div>
+				      <p class="founder__card__name" style="color: #D18B49;">Plan About Stag</p>
+				    </div>
+				    <div class="founder__card__btm">
+				      <p class="founder__card__we">关于该计划的项目简介:Brief introduction about the project,you can fill in any information that is relevant to the plan</p>
+				    </div>
+				    <div class="founder__card__choice m--reject"><i class="icon-remove"></i></div>
+				    <div class="founder__card__choice m--like"><i class="icon-star"></i></div>
+				    <div class="founder__card__drag"></div>
+				</div>
+			</div>
+			<p class="founder__tip">向右滑动收藏向左滑动跳过</p>
+		</div>			
+	</div>
+</div>
+<script src='js/stopExecutionOnTimeout.js?t=1'></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-2.2.1.min.js"><\/script>')</script>
+	<script>
+	$(document).ready(function () {
+	    var animating = false;
+	    var cardsCounter = 0;
+	    var numOfCards = 6;
+	    var decisionVal = 80;
+	    var pullDeltaX = 0;
+	    var deg = 0;
+	    var $card, $cardReject, $cardLike;
+	    function pullChange() {
+	        animating = true;
+	        deg = pullDeltaX / 10;
+	        $card.css('transform', 'translateX(' + pullDeltaX + 'px) rotate(' + deg + 'deg)');
+	        var opacity = pullDeltaX / 100;
+	        var rejectOpacity = opacity >= 0 ? 0 : Math.abs(opacity);
+	        var likeOpacity = opacity <= 0 ? 0 : opacity;
+	        $cardReject.css('opacity', rejectOpacity);
+	        $cardLike.css('opacity', likeOpacity);
+	    }
+	    ;
+	    function release() {
+	        if (pullDeltaX >= decisionVal) {
+	            $card.addClass('to-right');
+	        } else if (pullDeltaX <= -decisionVal) {
+	            $card.addClass('to-left');
+	        }
+	        if (Math.abs(pullDeltaX) >= decisionVal) {
+	            $card.addClass('inactive');
+	            setTimeout(function () {
+	                $card.addClass('below').removeClass('inactive to-left to-right');
+	                cardsCounter++;
+	                if (cardsCounter === numOfCards) {
+	                    cardsCounter = 0;
+	                    $('.founder__card').removeClass('below');
+	                }
+	            }, 300);
+	        }
+	        if (Math.abs(pullDeltaX) < decisionVal) {
+	            $card.addClass('reset');
+	        }
+	        setTimeout(function () {
+	            $card.attr('style', '').removeClass('reset').find('.founder__card__choice').attr('style', '');
+	            pullDeltaX = 0;
+	            animating = false;
+	        }, 300);
+	    };
+	    $(document).on('mousedown touchstart', '.founder__card:not(.inactive)', function (e) {
+	        if (animating)
+	            return;
+	        $card = $(this);
+	        $cardReject = $('.founder__card__choice.m--reject', $card);
+	        $cardLike = $('.founder__card__choice.m--like', $card);
+	        var startX = e.pageX || e.originalEvent.touches[0].pageX;
+	        $(document).on('mousemove touchmove', function (e) {
+	            var x = e.pageX || e.originalEvent.touches[0].pageX;
+	            pullDeltaX = x - startX;
+	            if (!pullDeltaX)
+	                return;
+	            pullChange();
+	        });
+	        $(document).on('mouseup touchend', function () {
+	            $(document).off('mousemove touchmove mouseup touchend');
+	            if (!pullDeltaX)
+	                return;
+	            release();
+	        });
+	    });
+	});
+
+$('.Go-home').on('click',function(e){
+	GoHome();
+});
+$('.OtherLink-star').on('click',function(e){
+	var burl = 'box.html';
+	myajax(burl,'star');
+
+});
+	</script>

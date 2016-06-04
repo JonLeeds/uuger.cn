@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/welcome.css">
+	<title>welcome</title>
+		<script src="js/fastclick.min.js"></script>
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/iscroll.js"></script>
+
+<script type="text/javascript">
+
+var myScroll;
+
+function loaded () {
+
+	var width = $("#wrapper").width();//获取屏幕宽度  
+	 height = window.screen.height-70;
+    var num = $("#wrapper #scroller .slide").length;//获取幻灯片的个数  
+    $("#wrapper #scroller").width(width * num);//设置ul的宽度  
+    $("#wrapper #scroller .slide").width(width);
+   hhhh = height-20 + 'px';
+   hhhh2 = height + 'px';
+    $('#indicator').css("top",function(){return hhhh;});
+    $('.slide img').css("height",function(){return hhhh2;})
+	myScroll = new IScroll('#wrapper', {
+		scrollX: true,
+		scrollY: false,
+		momentum: false,
+		snap: true,
+		snapSpeed: 300,
+		click: true,
+		keyBindings: true,
+		indicators: {
+			el: document.getElementById('indicator'),
+			resize: false
+		}
+	});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+</script>
+<style type="text/css">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html {
+			-ms-touch-action: none;
+			background-image: url(img/bg.jpg);
+			background-size: 150%;
+		}
+
+		body, ul, li {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+
+		body {
+			font-size: 12px;
+			font-family: ubuntu, helvetica, arial;
+			overflow: hidden; /* this is important to prevent the whole page to bounce */
+		}
+
+		#viewport {
+			position: relative;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		#wrapper {
+			height: 100%;
+			margin: 0 auto;
+		}
+
+		#scroller {
+			position: relative;
+			z-index: 1;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-transform: translateZ(0);
+			-moz-transform: translateZ(0);
+			-ms-transform: translateZ(0);
+			-o-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+			-ms-text-size-adjust: none;
+			-o-text-size-adjust: none;
+			text-size-adjust: none;
+		}
+
+		.slide {
+			float: left;
+			overflow: hidden;
+		}
+
+		.slide img {
+			width: 100%;
+			overflow: hidden;
+		}
+		#indicator {
+		    z-index: 2;
+		    position: relative;
+		    width: 55px;
+		    height: 10px;
+		    margin-left: auto;
+		    margin-right: auto;
+			background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUBAMAAABohZD3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUGCDYztyDUJgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAGFBMVEUAAADNzc3Nzc3Nzc3Nzc3Nzc3Nzc3///8aWwwLAAAABnRSTlMAX5Ks3/nRD0HIAAAAAWJLR0QHFmGI6wAAAFtJREFUGFdjYGBgEHYNMWRAAJE0IHCEc5nSwEABxleD8JOgXMY0KBCA8FlgfAcIXwzGT4TwzWD8ZAjfDcZPgfDDYPxU7Hx09ejmoduH7h5096L7B8O/6OGBGl4APYg8TQ0XAScAAAAASUVORK5CYII=);
+			background-size: 15px;
+		}
+
+		#dotty {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-radius: 10px;
+			background: rgba(233, 30, 99, 0.76);
+		}
+
+</style>
+</head>
+<body onload="loaded()">
+
+<div id="viewport">
+	<div id="wrapper">
+		<div id="scroller">
+			<div class="slide">
+				<img src="img/yindao1.svg">
+			</div>
+			<div class="slide">
+				<img src="img/yindao2.svg">
+			</div>
+			<div class="slide">
+				<img src="img/yindao3.svg">
+			</div>
+			<div class="slide">
+				<a href="../uuger.cn/index.html">
+				<img src="img/yindao4.svg">
+				<a>
+			</div>
+		</div>
+		<div id="indicator">
+			<div id="dotty"></div>
+		</div>	
+	</div>
+
+</div>
+
+
+
+</body>
+</html>
+</html>

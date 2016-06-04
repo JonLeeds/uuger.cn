@@ -1,0 +1,50 @@
+<div id="normalpager">
+	<div class="new-header">
+	</div>
+	<div class="new-barer">
+
+		<div class="new-bar transition">通知</div>
+		<div class="new-bar">私信</div>
+		<div class="linemover">
+			<div class="linemove"></div>
+		</div>
+		<a href="" style="color: #E91E63;" class="Go-home">
+			<i class=" backhome icon-home"></i> 
+		</a>
+	</div>
+		<div class="new-contanter new-page1">
+			<div class="new-contant ">			
+				<p>HelloTomorrow 在该计划中留言：</p>
+				<p style="float: right;left: -10px;position: relative;;">1分钟前</p>
+				<h5>Vi设计-毕业设计-食品类</h5>
+			</div>		
+		</div>
+		<div class="new-contanter new-page2">
+			<div class="new-contant ">
+				<h5>HelloTomorrow 给你发来一条私信：</h5>			
+				
+				<p style="float: right;left: -10px;position: relative;;">1分钟前</p>
+				<p>我是HelloTomorrow求加个好友</p>
+			</div>
+
+		</div>
+
+</div>
+<script>
+	$('.new-bar:nth-child(1)').click(function () {
+		$('.new-bar').removeClass('transition');
+		$(this).addClass('transition');
+		$('.linemove').removeClass('transition');
+		$('.new-contanter').removeClass('transition');
+	});
+	$('.new-bar:nth-child(2)').click(function () {
+		$('.new-bar').removeClass('transition');
+		$(this).addClass('transition');
+		$('.linemove').addClass('transition');
+		$('.new-contanter').addClass('transition');
+	});
+	$('.Go-home').on('click',function(e){
+		var aurl = 'index.html';
+		GoHome(aurl);
+	});
+</script>

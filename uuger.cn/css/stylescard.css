@@ -1,0 +1,278 @@
+
+hr {
+  border: 0;
+  border-top: 1px solid #fff;
+}
+/*header*/
+#cardheader {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  color: #E91E63;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 1px 2px 2px 0 #aaa;
+}
+#cardheader p.cardtitle{
+font-size: 14px;
+text-align: center;
+font-family: ubuntu, helvetica, arial;
+font-weight: bold;
+}
+#cardheader .back{
+  top: 14px;
+  position: absolute;
+  left: 4%;
+  font-size: 18px;
+}
+#cardheader .cardplus{
+  top: 14px;
+  position: absolute;
+  left: 92%;
+  font-size: 19px;
+}
+/*header结束*/
+/*名片主体*/
+.friendcards{
+  width: 100%;
+  position: relative;
+}
+
+/*//////cardsbar左右标签切换*/
+.cardsbarer{
+  width: 140%;
+  height: 40px; 
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  transform:translateX(-28%);
+  -moz-transition: all 0.4s cubic-bezier(0.25, 0.15, 0.25, 1.02);
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.15, 0.25, 1.02);
+        transition: all 0.4s cubic-bezier(0.25, 0.15, 0.25, 1.02);
+}
+.cardsbar-1,.cardsbar-2{
+  background-color: #fff;
+  color: #666;
+  width: 50%; height: 100%;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.cardsbar-1 p,.cardsbar-2 p{
+  display: inline-block;
+  margin-top: 12px;
+  position: relative;
+  left: 28%;
+}
+.cardsbar-2 p{
+  left: -28%;
+}
+.cardsbarer.transition{
+  transform:translateX(0%);
+}
+.cardsbar-1.transition,.cardsbar-2.transition{
+  background-color: #E91E63;
+  color: #fff;
+
+}
+.cardsbar-1.transition p,.cardsbar-2.transition p{
+    left: 0;
+}
+/*//////cardsbar左右标签切换结束*/
+/*team卡组样式和动画*/
+    /*卡组动画*/
+.cardsbox{
+  top: 10px;
+  position: relative;
+  height: 100%;
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 1px 2px 5px 0 #aaa;
+}
+.card-teams{
+  margin-top: 5%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform:translateX(100%);
+  -moz-transition: all 0.4s ;
+  -webkit-transition: all 0.4s ;
+        transition: all 0.4s;
+}
+.card-teams.transition{
+  transform:translateX(0);
+}
+  /*卡组动画结束*/
+ul.card-team{
+  width: 100%;
+  list-style-type: none;
+  padding: 0; 
+  position: relative;
+  cursor: pointer;
+}
+ul.card-team li.card-t{
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 140px;
+  background-color: #fff;
+  border-radius: 20px;
+
+}
+.card-team.team-2{
+  top: 10px;
+}
+
+.facegroup{
+width: 110px;
+height: 100px;
+position: relative;
+margin-left: 20px;
+margin-top: 20px;
+overflow: hidden;
+border-radius: 20px;
+border: solid 1px #FFD4D4;
+float: left;
+}
+.teamcontant{
+  max-width:110px;
+  float: left;
+  height: 100px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.teamcontant p{
+  float: left;
+  margin:4px 0 0 0;
+}
+.teamcontant a{
+  float: left;
+
+}
+
+ul.card-team li.card-t img{
+height: 50px;
+width: 50px;
+}
+ul.card-t{
+  overflow: hidden;
+}
+/*team卡组样式和动画结束*/
+
+/*个人卡组样式和动画*/
+/*卡组整体动画*/
+ul.card-stacks {
+  width: 100%;
+  list-style-type: none;
+  margin-top: 5%;
+  padding: 0;
+  position: absolute;
+  cursor: pointer;
+  transform:translateX(120%);
+}
+ul.card-stacks.transition {
+  transform:translateX(0%);
+}
+/*卡组整体动画 结束*/
+ul.card-stacks li.stack {
+  position: absolute;
+  left: 0px;
+  -moz-transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.02);
+  -webkit-transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.02);
+          transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.02);
+
+}
+ul.card-stacks li.stack ul.cards-down {
+  position: relative;
+  margin: 0 0 20px;
+  padding: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ul.card-stacks li.stack ul.cards-down li.card {
+  -webkit-transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.22);
+          transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.22);
+  left: 0px;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+  background: #FFF;
+  overflow: hidden;
+  height:0px;
+  width: 0px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  box-shadow: 1px 2px 2px 0 #aaa;
+}
+ul.card-stacks li.stack ul.cards-down li.card img {
+  max-width: 100%;
+  padding: 5px;
+  height: auto;
+}
+ul.card-stacks li.stack ul.cards-down li.card div.content {
+  padding: 5px 10px;
+  text-align: center;
+}
+ul.card-stacks li.stack ul.cards-down li.card div.content h4 {
+margin: 0;
+font-size: 14px;
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-1 {
+  z-index: 10;
+  -webkit-transform: rotateZ(-2deg);
+          transform: rotateZ(-2deg);
+          transform:translateY(0%);
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-2 {
+  z-index: 9;
+  -webkit-transform: rotateZ(-7deg);
+          transform: rotateZ(-7deg);
+}
+ul.card-stacks li.stack ul.cards-down li.card.card-3 {
+  z-index: 8;
+  -webkit-transform: rotateZ(5deg);
+          transform: rotateZ(5deg);
+          transform:translateY(0%);
+}
+ul.card-stacks li.stack.stack-1,ul.card-stacks li.stack.stack-2,ul.card-stacks li.stack.stack-3{
+  -moz-transition:translateX(0%);
+-webkit-transition: translateX(0%);  
+   transform:translateX(0%);
+}
+ul.card-stacks.transition li.stack.stack-1 {
+  -moz-transition:translateX(2.5%);
+-webkit-transition: translateX(2.5%);
+  transform:translateX(2.5%);
+}
+ul.card-stacks.transition li.stack.stack-2 {
+    -moz-transition:translateX(35%);
+-webkit-transition: translateX(35%);
+  transform:translateX(35%);
+}
+ul.card-stacks.transition li.stack.stack-3 {
+  -moz-transition:translateX(67.5%);
+  -webkit-transition: translateX(67.5%);
+  transform:translateX(67.5%);
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card.card-1 {
+  transform:translateY(220%);
+}
+ul.card-stacks.transition li.stack ul.cards-down li.card.card-2 {
+  transform:translateY(110%);
+}
+/*个人卡组样式和动画*/

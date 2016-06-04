@@ -1,0 +1,52 @@
+#over{ 
+position: fixed; 
+border: 1px solid black; 
+display: none; 
+background: #cccccc; 
+cursor: default; 
+width: 20%; 
+z-index: 5; 
+opacity: 1; 
+bottom: 4em;
+} 
+#title{ 
+border: 1px solid #1840C4; 
+background: #95B4DC; 
+padding: 2px; 
+font-size:12px; 
+cursor: default; 
+} 
+#close{ 
+cursor: pointer; 
+width: 100%;
+height: 100%; 
+} 
+#content{ 
+border: 1px solid #C2D560; 
+background: #EFF4D7; 
+} 
+
+.mask{ 
+-webkit-tap-highlight-color:transparent;
+cursor: pointer; 
+position: absolute;
+z-index: 1; 
+width: 100%; 
+height:100%;
+} 
+body{ 
+padding: 0px; 
+margin: 0px; 
+} 
+
+#over{ 
+background: transparent; 
+} 
+.test{
+	top: 100px;
+	position: absolute;
+	z-index: 1;
+	height: 90px;
+	width:90px; 
+	background:url(../images/8F4CDDF0.png); 
+}

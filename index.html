@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/welcome.css">
+	<title>welcome</title>
+	<script src="js/fastclick.min.js"></script>
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript">
+        	$(function() {
+				FastClick.attach(document.body); });
+       		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            $(function(){
+                $(".page1").height($(window).height());
+                $(".page2").height($(window).height());
+                $(".page3").height($(window).height());
+            });
+            $(function(){
+				$("#button2").click(function(){
+					$("#screen").addClass("animate");
+					$("#formanimate").addClass("animate2");
+				});
+				$("#button").click(function(){
+					$("#screen").addClass("animate");
+					$("#formanimate").addClass("animate3");
+				});				
+				$(".back").click(function(){
+					$("#screen").removeClass("animate");
+					$("#formanimate").removeClass("animate2");
+					$("#formanimate").removeClass("animate3");
+				}); 
+				$("#sinup").click(function(){
+					$("#formanimate").removeClass("animate2");
+					$("#formanimate").addClass("animate3");
+				}); 
+				$("#lgin").click(function(){
+					$("#formanimate").removeClass("animate3");
+					$("#formanimate").addClass("animate2");
+				}); 
+	            $('.welcomeAbout').click(function(){
+	            	$('.welcomeAbout').hide();
+	            });
+			}); 
+
+        </script>
+      <style type="text/css">
+
+      </style>
+</head>
+<body>
+<div class="welcomeAbout" >
+<img  src="img/22.png" style="position: absolute;z-index: 999; width:  100%;">
+</div>
+<div id="screen" class="">
+	<div class="page1 viewport">
+		<div class="bgimg"></div>
+		<a id="skip" href="BeforeApp.html">Skip></a>
+		<div id="content">
+			<img src="img/logo.svg">
+			<p>Welcome to uger.</p>
+		</div>
+		<div class="box">
+			<span id ="button" href="viewport page2">立即加入</span>
+			<span id="button2" href="viewport page2">登录</span>
+		</div>
+	</div>
+	<div class="page2 viewport">
+		<div class="formbg">	
+		</div>
+		<div  id="formanimate" class="">
+			<div class= "form1" >
+				<div class="back"></div>
+				<form action="" method="post">
+					<div>
+						<input type="text"  placeholder="邮箱或手机号" name="email" >
+					</div>
+					<div>
+						<input type="password"  placeholder="密码" name="password" >
+					</div>
+					<div>
+						<input type="hidden" name="action" value="login">
+						<input type="submit" value="登录" id="sub">
+					</div>	
+					<div class="alink"><span id="sinup"><a href="#">马上加入</a></span></div>
+					<div class="alink"><span id="forget"><a href="#">忘记密码?</a></span></div>						
+				</form>
+			</div>
+			<div class="form2">
+				<div class="back"></div>
+				<form action="" method="post">
+					<div>
+					  	<input type="text" name="name"  placeholder="您的称呼">
+					</div>					
+					<div>
+						<input type="text" name="email" placeholder="常用邮箱" >
+					</div>
+					<div>
+						<input type="password"  id="password" placeholder="设置密码">
+					</div>
+					<div id="rule">
+						<a >点击"立即加入",即代表您同意并遵守优稿的《用户协议》、《隐私政策》和《Cookie政策》</a>
+					</div>	
+					<div>
+						<input type="hidden" name="action" value="signup">
+						<input type="submit" value="马上加入" id="sub">
+					</div>
+					<div>
+						<span id="lgin"><a href="#page2">已有帐号?登录</a></span>
+					</div>	
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

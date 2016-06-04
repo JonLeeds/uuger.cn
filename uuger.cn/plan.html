@@ -1,0 +1,24 @@
+<div id="normalpager">
+		<header class="founder__header"></header>
+		<div class="founder-headerbar">
+			<i class="backhome  icon-angle-left back-page" style="font-size: 30px;     line-height: 20px;"></i> 
+			<a href="#" class="OtherLink" name="plan.html">
+				<p style="    float: right;margin-top: 10px;margin-right: 10px;font-size: 12px;font-family: Microsoft YaHei;color: #333333;">所有计划</p>
+			</a>
+			<p style=" margin-left: 50%;left: -15px;position: relative;font-size: 15px;top: 7px;font-family: Microsoft YaHei;color: #E91E63;font-weight: 600; display: inline-block;">计划</p>
+		</div>
+	<div id="wrapper">
+		<div class="scroller" style="height: 1700px; background-color: #fff;">
+			<img src="img/planpage.svg">
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.back-page').on('click',function(e){
+		myajax(state.url);
+	});
+	$('.OtherLink').on('click',function(e){
+		var aurl = 'box.html';
+		myajax(aurl);
+	});
+</script>

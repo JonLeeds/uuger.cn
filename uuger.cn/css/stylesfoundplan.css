@@ -1,0 +1,198 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+}
+
+body {
+  background: #63BDF7;
+  overflow: hidden;
+}
+
+.founder {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background: #F6F6F5;
+}
+.founder__header {
+  height: 15px;
+  width: 100%;
+  background: rgb(233, 30, 99);
+}
+.founder-headerbar{
+  height: 40px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: solid 1px #E1E1E1;
+  position: relative;
+  z-index: 3;
+}
+.founder__content {
+  position: relative;
+  height:100% ;
+  padding-top: 8%;
+  width: 80%;
+  margin-left: 10%;
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.founder__card-cont {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.founder__card {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+.founder__card.reset {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+  -webkit-transform: translateX(0) !important;
+      -ms-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+.founder__card.reset .founder__card__choice {
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  opacity: 0 !important;
+}
+.founder__card.inactive {
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+.founder__card.to-left {
+  -webkit-transform: translateX(-30rem) rotate(-30deg) !important;
+      -ms-transform: translateX(-30rem) rotate(-30deg) !important;
+          transform: translateX(-30rem) rotate(-30deg) !important;
+}
+.founder__card.to-right {
+  -webkit-transform: translate(30rem) rotate(30deg) !important;
+      -ms-transform: translate(30rem) rotate(30deg) !important;
+          transform: translate(30rem) rotate(30deg) !important;
+}
+.founder__card.below {
+  z-index: 1;
+}
+.founder__card__top {
+  height: 70%;
+  padding-top: 5%;
+  background-color: #fff;
+}
+.founder__card__top.Bear {
+  color: #6D54B2;
+}
+.founder__card__top.Fox {
+  color: #4D93BF;
+}
+.founder__card__top.Mouse {
+ color: #47AB7F;
+}
+.founder__card__top.Rabbit {
+  color: #FFE27E;
+}
+.founder__card__top.Stag {
+  color: rgba(233, 30, 47, 0.64);
+}
+.founder__card__top.brown {
+  background: #795548;
+}
+.founder__card__img {
+    overflow: hidden;
+    width: 50%;
+    height: 70%;
+    margin-top: 10%;
+    margin-left: 25%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.founder__card__img.Bear{
+      background-image: url("../img/Bear.svg");
+}
+.founder__card__img.Fox{
+      background-image: url("../img/Fox.svg");
+}
+.founder__card__img.Mouse{
+      background-image: url("../img/Mouse.svg");
+}
+.founder__card__img.Rabbit{
+      background-image: url("../img/Rabbit.svg");
+}
+.founder__card__img.Stag{
+      background-image: url("../img/Stag.svg");
+}
+.founder__card__name {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Microsoft YaHei;
+    font-weight: 600;
+}
+.founder__card__btm {
+  height: 30%;
+  background: #FFFFFF;
+  padding: 10px;
+}
+.founder__card__we {
+  text-align: center;
+  font-size: 2.2rem;
+  font-size: 13px;
+  font-family: Microsoft YaHei;
+  color: #888;
+}
+.founder__card__choice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding-top: 25%;
+  font-size: 80px;
+  text-align: center;
+ color: #fff;
+}
+.founder__card__choice.m--reject {
+  background: rgba(145, 210, 255, 0.79);
+}
+.founder__card__choice.m--like {
+  background: rgba(255, 225, 145, 0.79);
+}
+.founder__card__drag {
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.founder__tip {
+  font-family: Microsoft YaHei;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 30px;
+    font-weight: 300;
+    color: #999;
+}
